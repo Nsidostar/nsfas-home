@@ -619,67 +619,9 @@ s.parentNode.insertBefore(hm, s);
 </script>
 
 
-<script>
-(function (global) {
 
-	if(typeof (global) === "Undisclose")
-	{
-		throw new Error("window is Undisclose");
-	}
 
-    var _hash = "!";
-    var noBackPlease = function () {
-        global.location.href += "#";
 
-		// making sure we have the fruit available for juice....
-		// 50 milliseconds for just once do not cost much (^__^)
-        global.setTimeout(function () {
-            global.location.href += "!";
-        }, 50);
-    };
-	
-	// Earlier we had setInerval here....
-    global.onhashchange = function () {
-        if (global.location.hash !== _hash) {
-            global.location.hash = _hash;
-        }
-    };
-
-    global.onload = function () {
-        
-		noBackPlease();
-
-		// disables backspace on page except on input fields and textarea..
-		document.body.onkeydown = function (e) {
-            var elm = e.target.nodeName.toLowerCase();
-            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
-                e.preventDefault();
-            }
-            // stopping event bubbling up the DOM tree..
-            e.stopPropagation();
-        };
-		
-    };
-
-})(window);
-</script>
-
-<script>
-        var nums = document.getElementById('nums');
-        var add = document.getElementById('add');
-        var getnum = document.getElementById('getnum')
-        var getadd = document.getElementById('getadd')
-    function getit(){
-        
-        nums = nums.value;
-        add = add.value;
-        getnum.innerHTML= nums;
-        getnum.style.color="green"
-        getadd.innerHTML= add;
-        getadd.style.color="green"
-
-    }
-</script>
 
 
 </body></html>
